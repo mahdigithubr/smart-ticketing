@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart ticketing</title>
+    <!-- tailwind and daisy ui cnd -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google font link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- tailwind customization -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1DD100",
+              "text-primary": "#030712", // 7%
+              "text-secondary": "#03071280", // 50%
+              "text-thirdly": "#03071299", // 60%
+              "background-secondary": "#0307121a",
+              "primary-background": "#F7F8F8",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- css style  font-family -->
+    <style>
+      .raleway-font {
+        font-family: "Raleway", serif;
+      }
+      .inter-font {
+        font-family: "Inter", serif;
+      }
+    </style>
+  </head>
+  <body class="raleway-font box-border">
+    <!-- header section start -->
+    <header class="container mx-auto"></header>
+    <!-- header section end -->
+
+    <!-- main section start -->
+    <main class="">
+      <section class="bg-primary-background">
+        <!-- heading description div -->
+        <div class="text-center space-y-5 mx-5">
+          <h2 class="text-4xl font-bold text-text-primary">P.H Paribahan</h2>
+          <p>
+            Yes, you can run unit tests and view the results directly within the
+            app. The integrated <br class="hidden lg:block" />
+            testing features allow for a streamlined .
+          </p>
+        </div>
+        <!-- Bus description div -->
+        <div
+          class="mt-8 bg-white lg:container mx-auto justify-center flex flex-col lg:flex-row items-center rounded-2xl w-5/6"
+        >
+          <!-- bus seat details -->
+          <div class="p-7 flex-1">
+            <div
+              class="flex text-center lg:text-left lg:justify-between flex-col lg:flex-row space-y-5 lg:space-y-0"
+            >
+              <!-- bus  name and  logo-->
+              <div
+                class="flex justify-center lg:justify-start lg:text-left text-center items-center"
+              >
+                <img class="h-12" src="images/bus-logo.png" alt="" />
+                <p class="ml-2">
+                  <span class="lg:text-3xl text-2xl font-bold"
+                    >Greenline Paribahan</span
+                  >
+                  <br class="text-text-thirdly text-lg inter-font" />
+                  Coach-009-WEB ! AC_Business
+                </p>
+              </div>
+              <div class="flex justify-center">
+                <span class="text-primary rounded-lg px-4 py-3 bg-[#1DD10026]">
+                  <img class="inline" src="images/seat-green.png" alt="" />
+                  40 Seats left
+                </span>
+              </div>
+            </div>
+            <div
+              class="bg-primary-background p-5 space-y-3 rounded-2xl mt-10 lg:mt-5"
+            >
+              <!-- where to go  -->
+
+              <div class="flex justify-between">
+                <p class="text-text-thirdly">Route</p>
+                <p class="text-text-primary font-semibold">Dhaka - Sylhet</p>
+              </div>
+              <hr class="border border-dashed" />
+              <!-- bus time -->
+              <div class="flex justify-between">
+                <p class="text-text-thirdly">Departure Time</p>
+                <p class="text-text-primary font-semibold">9:00 PM</p>
+              </div>
+              <hr class="border border-dashed" />
+
+              <!-- stope places -->
+              <div
+                class="flex justify-between flex-col lg:flex-row gap-4 text-center"
+              >
+                <p class="text-[#030712CC] px-4 py-3 bg-[#0307120D] rounded-lg">
+                  Boarding Point - Laxmipur
+                </p>
+                <p class="text-[#030712CC] px-4 py-3 bg-[#0307120D] rounded-lg">
+                  Dropping Point - Bogura
+                </p>
+                <p class="text-[#030712CC] px-4 py-3 bg-[#0307120D] rounded-lg">
+                  Est. Time - 11 Hour
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- image for mid cutting ... -->
+          <img
+            src="images/info-devider.png"
+            class="w-16 hidden lg:block"
+            alt="cupon-devider"
+          />
+          <!-- ticket  description right div -->
+
+          <div class="p-7 pr-12 flex-col flex justify-center items-center">
+            <img class="w-12" src="images/fare.png" alt="" />
+            <h4 class="text-3xl font-semibold">550 Taka</h4>
+            <p class="text-text-third">Per Seat</p>
+          </div>
+        </div>
+        <!-- calculation div and payment div -->
+        <div
+          class="flex flex-col lg:flex-row lg:container mx-auto mt-5 bg-white p-6 rounded-2xl"
+        >
+          <!-- ticket buying left div -->
+          <div class="space-y-5 lg:mx-0 lg:max-w-none mx-auto max-w-[600px]">
+            <h4 class="text-2xl font-semibold">Select Your Seat</h4>
+            <hr class="border border-dashed" />
+            <div class="flex justify-between">
+              <p>
+                <img
+                  src="images/seat-gray.png"
+                  class="inline"
+                  alt="available set image"
+                />
+                Available
+              </p>
+              <p
+                class="text-center px-10 py-3 rounded-lg bg-primary hidden text-white"
+                id="warning-massage"
+              ></p>
+              <p>
+                <img
+                  src="images/seat-green.png"
+                  class="inline"
+                  alt="selected image"
+                />Selected
+              </p>
+            </div>
+            <hr class="border border-dashed" />
+            <div class="flex justify-end">
+              <p class="px-9 py-3 rounded-lg bg-[#0307121a]">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16 28C14.4241 28 12.8637 27.6896 11.4078 27.0866C9.95189 26.4835 8.62902 25.5996 7.51472 24.4853C6.40042 23.371 5.5165 22.0481 4.91345 20.5922C4.31039 19.1363 4 17.5759 4 16C4 14.4241 4.31039 12.8637 4.91345 11.4078C5.5165 9.95189 6.40042 8.62902 7.51472 7.51472C8.62902 6.40042 9.95189 5.5165 11.4078 4.91345C12.8637 4.31039 14.4241 4 16 4C17.5759 4 19.1363 4.31039 20.5922 4.91345C22.0481 5.5165 23.371 6.40042 24.4853 7.51472C25.5996 8.62902 26.4835 9.95189 27.0866 11.4078C27.6896 12.8637 28 14.4241 28 16C28 17.5759 27.6896 19.1363 27.0866 20.5922C26.4835 22.0481 25.5996 23.371 24.4853 24.4853C23.371 25.5996 22.0481 26.4835 20.5922 27.0866C19.1363 27.6896 17.5759 28 16 28ZM16 28V18.6667M13.3333 16C13.3333 16.7072 13.6143 17.3855 14.1144 17.8856C14.6145 18.3857 15.2928 18.6667 16 18.6667M13.3333 16C13.3333 15.2928 13.6143 14.6145 14.1144 14.1144C14.6145 13.6143 15.2928 13.3333 16 13.3333C16.7072 13.3333 17.3855 13.6143 17.8856 14.1144C18.3857 14.6145 18.6667 15.2928 18.6667 16M13.3333 16L4.33333 13.3333M16 18.6667C16.7072 18.6667 17.3855 18.3857 17.8856 17.8856C18.3857 17.3855 18.6667 16.7072 18.6667 16M18.6667 16L27.6667 13.3333"
+                    stroke="#030712"
+                    stroke-opacity="0.7"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </p>
+            </div>
+            <!-- main ticket number or serial -->
+            <div class="flex flex-col lg:flex-row gap-16">
+              <!-- sub main 1 -->
+              <div class="flex gap-7">
+                <div class="space-y-5 cursor-pointer">
+                  <p id="first" class="px-5 py-4 rounded-lg">A1</p>
+                  <p class="px-5 py-4 rounded-lg">B1</p>
+                  <p class="px-5 py-4 rounded-lg">C1</p>
+                  <p class="px-5 py-4 rounded-lg">D1</p>
+                  <p class="px-5 py-4 rounded-lg">E1</p>
+                  <p class="px-5 py-4 rounded-lg">F1</p>
+                  <p class="px-5 py-4 rounded-lg">G1</p>
+                  <p class="px-5 py-4 rounded-lg">H1</p>
+                  <p class="px-5 py-4 rounded-lg">I1</p>
+                  <p class="px-5 py-4 rounded-lg">J1</p>
+                </div>
+                <div class="space-y-5 cursor-pointer">
+                  <p
+                    id="background-change1"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    A1
+                  </p>
+                  <p
+                    id="background-change2"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    B1
+                  </p>
+                  <p
+                    id="background-change3"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    C1
+                  </p>
+                  <p
+                    id="background-change4"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    D1
+                  </p>
+                  <p
+                    id="background-change5"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    E1
+                  </p>
+                  <p
+                    id="background-change6"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    F1
+                  </p>
+                  <p
+                    id="background-change7"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    G1
+                  </p>
+                  <p
+                    id="background-change8"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    H1
+                  </p>
+                  <p
+                    id="background-change9"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    I1
+                  </p>
+                  <p
+                    id="background-change10"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    J1
+                  </p>
+                </div>
+                <div class="space-y-5 cursor-pointer">
+                  <p
+                    id="background-change11"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    A2
+                  </p>
+                  <p
+                    id="background-change12"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    B2
+                  </p>
+                  <p
+                    id="background-change13"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    C2
+                  </p>
+                  <p
+                    id="background-change14"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    D2
+                  </p>
+                  <p
+                    id="background-change15"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    E2
+                  </p>
+                  <p
+                    id="background-change16"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    F2
+                  </p>
+                  <p
+                    id="background-change17"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    G2
+                  </p>
+                  <p
+                    id="background-change18"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    H2
+                  </p>
+                  <p
+                    id="background-change19"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    I2
+                  </p>
+                  <p
+                    id="background-change20"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    J2
+                  </p>
+                </div>
+              </div>
+              <!-- sub main 2 -->
+              <div class="flex gap-5 ml-[92px] lg:ml-0 cursor-pointer">
+                <div class="space-y-5">
+                  <p
+                    id="background-change21"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    A3
+                  </p>
+                  <p
+                    id="background-change22"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    B3
+                  </p>
+                  <p
+                    id="background-change23"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    C3
+                  </p>
+                  <p
+                    id="background-change24"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    D3
+                  </p>
+                  <p
+                    id="background-change25"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    E3
+                  </p>
+                  <p
+                    id="background-change26"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    F3
+                  </p>
+                  <p
+                    id="background-change27"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    G3
+                  </p>
+                  <p
+                    id="background-change28"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    H3
+                  </p>
+                  <p
+                    id="background-change29"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    I3
+                  </p>
+                  <p
+                    id="background-change30"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    J3
+                  </p>
+                </div>
+                <div class="space-y-5">
+                  <p
+                    id="background-change31"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    A4
+                  </p>
+                  <p
+                    id="background-change32"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    B4
+                  </p>
+                  <p
+                    id="background-change33"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    C4
+                  </p>
+                  <p
+                    id="background-change34"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    D4
+                  </p>
+                  <p
+                    id="background-change35"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    E4
+                  </p>
+                  <p
+                    id="background-change36"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    F4
+                  </p>
+                  <p
+                    id="background-change37"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    G4
+                  </p>
+                  <p
+                    id="background-change38"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    H4
+                  </p>
+                  <p
+                    id="background-change39"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    I4
+                  </p>
+                  <p
+                    id="background-change40"
+                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                  >
+                    J4
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ticket buying right div  -->
+          <div
+            class="p-4 pt-8 lg:pt-0 lg:pl-8 lg:mt-0 mt-7 lg:ml-7 border-t-2 lg:border-t-0 lg:border-l-2 border-[#0307124d] border-dashed w-full space-y-4"
+          >
+            <h4 class="text-2xl font-semibold">Select Your Seat</h4>
+            <hr class="border w-full border-dashed" />
+            <!-- ticket calculation div -->
+            <div class="space-y-3 p-8 bg-primary-background rounded-xl">
+              <!-- calculation information -->
+              <div class="flex justify-between">
+                <p class="font-semibold">
+                  Seat
+                  <span
+                    id="ticket-number"
+                    class="bg-primary px-3 py-0 inter-font text-white rounded-xl"
+                    >0</span
+                  >
+                </p>
+                <p class="font-semibold">Class</p>
+                <p class="font-semibold">Price</p>
+              </div>
+              <hr class="border w-full border-dashe" />
+
+              <div id="ticketContainer">
+                <!-- <div
+                  id="hidden-price1"
+                  class="inter-font text-text-thirdly flex justify-between"
+                >
+                  <p id="set-name1">Set Name</p>
+                  <p id="economy-id1" class="">Economoy</p>
+                  <p><span class="tiket-amount1">0</span></p>
+                </div> -->
+              </div>
+
+              <hr class="border w-full border-dashed" />
+
+              <div class="inter-font font-semibold flex justify-between">
+                <p>Total Price</p>
+                <p>BDT 0</p>
+              </div>
+              <!-- coupon apply input field -->
+              <div class="relative">
+                <input
+                  class="px-4 py-4 w-full rounded-xl"
+                  placeholder="Have any coupon?"
+                  type="text"
+                />
+                <button
+                  class="px-4 py-2 bg-primary rounded-lg text-white absolute right-4 top-2"
+                >
+                  Apply
+                </button>
+              </div>
+              <div class="inter-font font-semibold flex justify-between">
+                <p>Grand Total</p>
+                <p>BDT 0</p>
+              </div>
+            </div>
+            <!-- form div -->
+            <div>
+              <form class="flex flex-col gap-3">
+                <label class="font-bold" for="name">Passenger Name*</label>
+                <input
+                  class="px-4 py-4 w-full rounded-xl border"
+                  placeholder="Enter your name"
+                  type="text"
+                />
+
+                <label class="font-bold" for="name">Passenger Name*</label>
+                <input
+                  class="px-4 py-4 w-full rounded-xl border"
+                  placeholder="Enter your phone number"
+                  type="text"
+                />
+
+                <label class="font-bold" for="name">Passenger Name*</label>
+                <input
+                  class="px-4 py-4 w-full rounded-xl border"
+                  placeholder="Enter your email id"
+                  type="text"
+                />
+                <button
+                  class="btn bg-primary my-3 text-white hover:bg-primary hover:text-white"
+                >
+                  Next
+                </button>
+                <p class="underline flex justify-evenly">
+                  <a href="#">Terms and Conditions</a>
+                  <a href="#">Cancellation Policy</a>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- main section end -->
+
+    <!-- footer section start -->
+    <footer></footer>
+    <!-- footer section end -->
+    <script src="js/function.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
