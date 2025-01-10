@@ -37,6 +37,7 @@
               "text-primary": "#030712", // 7%
               "text-secondary": "#03071280", // 50%
               "text-thirdly": "#03071299", // 60%
+              "text-fourthly": "#27AE60",
               "background-secondary": "#0307121a",
               "primary-background": "#F7F8F8",
             },
@@ -61,7 +62,32 @@
 
     <!-- main section start -->
     <main class="">
-      <section class="bg-primary-background">
+      <section
+        class="flex justify-center h-screen items-center bg-primary-background hidden"
+        id="success-ticket"
+      >
+        <div
+          class="max-w-[700px] max-h-[480px] py-10 px-20 text-center space-y-3 bg-white"
+          700px=""
+          480px=""
+        >
+          <img src="images/success.png" class="mx-auto mb-5" alt="" />
+          <h3 class="text-2xl text-text-fourthly mb-5">SUCCESS</h3>
+          <p class="text-text-primary font-semibold">
+            Thank you for Booking Our Bus Seats. <br />
+            We are working hard to find the best service and deals for you
+          </p>
+          <p class="text-bg-secondary inter-font">
+            Shortly you will find a confirmation in your email.
+          </p>
+          <button
+            class="btn px-16 rounded-full bg-[#27AE60] text-white hover:bg-[#27AE60] hover:text-white"
+          >
+            Continue
+          </button>
+        </div>
+      </section>
+      <section id="ticket-management" class="bg-primary-background">
         <!-- heading description div -->
         <div class="text-center space-y-5 mx-5">
           <h2 class="text-4xl font-bold text-text-primary">P.H Paribahan</h2>
@@ -202,16 +228,16 @@
               <!-- sub main 1 -->
               <div class="flex gap-7">
                 <div class="space-y-5 cursor-pointer">
-                  <p id="first" class="px-5 py-4 rounded-lg">A1</p>
-                  <p class="px-5 py-4 rounded-lg">B1</p>
-                  <p class="px-5 py-4 rounded-lg">C1</p>
-                  <p class="px-5 py-4 rounded-lg">D1</p>
-                  <p class="px-5 py-4 rounded-lg">E1</p>
-                  <p class="px-5 py-4 rounded-lg">F1</p>
-                  <p class="px-5 py-4 rounded-lg">G1</p>
-                  <p class="px-5 py-4 rounded-lg">H1</p>
-                  <p class="px-5 py-4 rounded-lg">I1</p>
-                  <p class="px-5 py-4 rounded-lg">J1</p>
+                  <p id="first" class="px-5 py-4 rounded-lg">A</p>
+                  <p class="px-5 py-4 rounded-lg">B</p>
+                  <p class="px-5 py-4 rounded-lg">C</p>
+                  <p class="px-5 py-4 rounded-lg">D</p>
+                  <p class="px-5 py-4 rounded-lg">E</p>
+                  <p class="px-5 py-4 rounded-lg">F</p>
+                  <p class="px-5 py-4 rounded-lg">G</p>
+                  <p class="px-5 py-4 rounded-lg">H</p>
+                  <p class="px-5 py-4 rounded-lg">I</p>
+                  <p class="px-5 py-4 rounded-lg">J</p>
                 </div>
                 <div class="space-y-5 cursor-pointer">
                   <p
@@ -491,64 +517,76 @@
               <hr class="border w-full border-dashe" />
 
               <div id="ticketContainer">
-                <!-- <div
-                  id="hidden-price1"
+                <div
+                  id="placeholder"
                   class="inter-font text-text-thirdly flex justify-between"
                 >
                   <p id="set-name1">Set Name</p>
                   <p id="economy-id1" class="">Economoy</p>
                   <p><span class="tiket-amount1">0</span></p>
-                </div> -->
+                </div>
               </div>
 
               <hr class="border w-full border-dashed" />
 
               <div class="inter-font font-semibold flex justify-between">
                 <p>Total Price</p>
-                <p>BDT 0</p>
+                <p>BDT <span id="total-price">0</span></p>
               </div>
               <!-- coupon apply input field -->
               <div class="relative">
                 <input
+                  disabled
+                  id="coupon-field"
                   class="px-4 py-4 w-full rounded-xl"
                   placeholder="Have any coupon?"
                   type="text"
                 />
                 <button
-                  class="px-4 py-2 bg-primary rounded-lg text-white absolute right-4 top-2"
+                  id="apply-discount"
+                  disabled
+                  class="px-4 py-2 bg-primary rounded-lg bg-text-secondary text-white absolute right-4 top-2"
                 >
                   Apply
                 </button>
               </div>
               <div class="inter-font font-semibold flex justify-between">
                 <p>Grand Total</p>
-                <p>BDT 0</p>
+                <p id="grand-total">BDT 0</p>
               </div>
             </div>
             <!-- form div -->
             <div>
-              <form class="flex flex-col gap-3">
+              <div class="flex flex-col gap-3">
                 <label class="font-bold" for="name">Passenger Name*</label>
                 <input
-                  class="px-4 py-4 w-full rounded-xl border"
+                  disabled
+                  id="passenger-name"
+                  class="px-4 py-4 w-full rounded-xl border inter-font"
                   placeholder="Enter your name"
                   type="text"
                 />
 
-                <label class="font-bold" for="name">Passenger Name*</label>
+                <label class="font-bold" for="name">Passenger Number*</label>
                 <input
-                  class="px-4 py-4 w-full rounded-xl border"
+                  disabled
+                  class="px-4 py-4 w-full rounded-xl border inter-font"
                   placeholder="Enter your phone number"
                   type="text"
+                  id="passenger-number"
                 />
 
-                <label class="font-bold" for="name">Passenger Name*</label>
+                <label class="font-bold" for="name">Passenger Email*</label>
                 <input
-                  class="px-4 py-4 w-full rounded-xl border"
+                  disabled
+                  class="px-4 py-4 w-full rounded-xl border inter-font"
                   placeholder="Enter your email id"
                   type="text"
+                  id="passenger-email"
                 />
                 <button
+                  disabled
+                  id="next-btn"
                   class="btn bg-primary my-3 text-white hover:bg-primary hover:text-white"
                 >
                   Next
@@ -557,7 +595,7 @@
                   <a href="#">Terms and Conditions</a>
                   <a href="#">Cancellation Policy</a>
                 </p>
-              </form>
+              </div>
             </div>
           </div>
         </div>

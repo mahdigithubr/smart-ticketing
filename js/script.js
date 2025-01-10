@@ -1,55 +1,40 @@
-// selectedEvent("background-change1");
-// selectedEvent("background-change2");
-// selectedEvent("background-change3");
-// selectedEvent("background-change4");
-// selectedEvent("background-change5");
-// selectedEvent("background-change6");
-// selectedEvent("background-change7");
-// selectedEvent("background-change8");
-// selectedEvent("background-change9");
-// selectedEvent("background-change10");
-// selectedEvent("background-change11");
-// selectedEvent("background-change12");
-// selectedEvent("background-change13");
-// selectedEvent("background-change14");
-// selectedEvent("background-change15");
-// selectedEvent("background-change16");
-// selectedEvent("background-change17");
-// selectedEvent("background-change18");
-// selectedEvent("background-change18");
-// selectedEvent("background-change19");
-// selectedEvent("background-change20");
-// selectedEvent("background-change21");
-// selectedEvent("background-change22");
-// selectedEvent("background-change23");
-// selectedEvent("background-change24");
-// selectedEvent("background-change25");
-// selectedEvent("background-change26");
-// selectedEvent("background-change27");
-// selectedEvent("background-change28");
-// selectedEvent("background-change29");
-// selectedEvent("background-change30");
-// selectedEvent("background-change31");
-// selectedEvent("background-change32");
-// selectedEvent("background-change33");
-// selectedEvent("background-change34");
-// selectedEvent("background-change35");
-// selectedEvent("background-change36");
-// selectedEvent("background-change37");
-// selectedEvent("background-change38");
-// selectedEvent("background-change39");
-// selectedEvent("background-change40");
-
 let selectedTickets = [];
 const ticketContainer = document.getElementById("ticketContainer");
-
+const ticketNumber = document.getElementById("ticket-number");
+const discountField = document.getElementById("coupon-field");
+const applyBtn = document.getElementById("apply-discount");
+const nextBtn = document.getElementById("next-btn");
+const passengerNumber = document.getElementById("passenger-number");
 document.querySelectorAll(".ticket").forEach((ticket) => {
   ticket.addEventListener("click", (selectedTicket) => {
     const button = selectedTicket.target;
-    console.log(button);
-    let matchClass = button.classList.contains("bg-primary");
+    applyBtn.classList.add("bg-text-secondary", true);
+    disabledRemove(button);
 
-    if (matchClass) {
+    // Check if the ticket count exceeds 4 and  open coupon option
+    if (
+      !button.classList.contains("bg-primary") &&
+      selectedTickets.length > 3
+    ) {
+      alert("You can select maximum 4 tickets.");
+      return;
+    } else if (
+      !button.classList.contains("bg-primary") &&
+      selectedTickets.length == 3
+    ) {
+      discountField.removeAttribute("disabled");
+    } else {
+      discountField.value = "";
+      discountField.setAttribute("disabled", true);
+    }
+    if (
+      !button.classList.contains("bg-primary") &&
+      selectedTickets.length >= 0
+    ) {
+    }
+
+    if (button.classList.contains("bg-primary")) {
+      // Toggle CSS classes
       button.classList.remove("bg-primary", "text-white", "font-semibold");
       button.classList.add("bg-primary-background");
     } else {
@@ -57,73 +42,58 @@ document.querySelectorAll(".ticket").forEach((ticket) => {
       button.classList.remove("bg-primary-background");
     }
 
-    const found = selectedTickets.find(
-      (item) => item.id == selectedTicket.target.id
-    );
+    discountInputField();
 
-    // console.log(found);
+    // Toggle ticket in selectedTickets array
+
+    const found = selectedTickets.find((item) => item.id === button.id);
 
     if (found) {
-      selectedTickets = selectedTickets.filter((item) => item.id != found.id);
+      selectedTickets = selectedTickets.filter((item) => item.id !== button.id);
+      // ticket number upgrade set ticket number
     } else {
       selectedTickets.push({
-        id: selectedTicket.target.id,
-        name: selectedTicket.target.innerText,
-        price: 500,
+        id: button.id,
+        name: button.innerText,
+        price: 550,
       });
+      // ticket number upgrade set ticket number
     }
+    ticketNumber.innerText = selectedTickets.length;
+    // Clear existing ticket elements first
+    ticketContainer.innerHTML = "";
+    let totalPrice = 0;
 
-    selectedTickets.map((element) => {
-      const p1 = document.createElement("p");
-      const p2 = document.createElement("p");
-      const p3 = document.createElement("p");
-      const container = document.createElement("div");
-      p1.innerText = element.name;
-      p2.innerHTML = element.price;
-      ticketContainer.appendChild(p1);
-      //   const button = document.getElementById(element.id);
-      //   let matchClass = button.classList.contains("bg-primary");
-      //   if (matchClass) {
-      //     button.classList.remove("bg-primary", "text-white", "font-semibold");
-      //     button.classList.add("bg-primary-background");
-      //   } else {
-      //     button.classList.add("bg-primary", "text-white", "font-semibold");
-      //     button.classList.remove("bg-primary-background");
-      //   }
+    selectedTickets.forEach((ticket) => {
+      totalPrice += ticket.price;
+
+      // Create the parent div element
+      const hiddenPriceDiv = document.createElement("div");
+      hiddenPriceDiv.id = `ticket${ticket.id}`;
+
+      hiddenPriceDiv.className =
+        "inter-font text-text-thirdly flex justify-between";
+
+      // Create and append the first <p> element
+      const name = document.createElement("p");
+      name.textContent = ticket.name;
+      hiddenPriceDiv.appendChild(name);
+
+      // Create and append the second <p> element
+      const economy = document.createElement("p");
+      economy.textContent = "Economy";
+      hiddenPriceDiv.appendChild(economy);
+
+      // Create and append the third <p> element with a <span>
+      const amount = document.createElement("p");
+      amount.textContent = `${ticket.price}`;
+      hiddenPriceDiv.appendChild(amount);
+
+      // Append to the ticket container
+      ticketContainer.appendChild(hiddenPriceDiv);
     });
 
-    // console.log(selectedTickets);
+    document.getElementById("total-price").innerText = totalPrice;
+    document.getElementById("grand-total").innerText = `BDT ${totalPrice}`;
   });
 });
-
-const elementHandler = () => {
-  // Create the parent div element
-  const hiddenPriceDiv = document.createElement("div");
-  hiddenPriceDiv.id = "hidden-price1";
-  hiddenPriceDiv.className =
-    "inter-font text-text-thirdly flex justify-between";
-
-  // Create and append the first <p> element
-  const setNameP = document.createElement("p");
-  setNameP.id = "set-name1";
-  setNameP.textContent = "Set Name";
-  hiddenPriceDiv.appendChild(setNameP);
-
-  // Create and append the second <p> element
-  const economyP = document.createElement("p");
-  economyP.id = "economy-id1";
-  economyP.className = "";
-  economyP.textContent = "Economy";
-  hiddenPriceDiv.appendChild(economyP);
-
-  // Create and append the third <p> element with a <span>
-  const amountP = document.createElement("p");
-  const amountSpan = document.createElement("span");
-  amountSpan.className = "tiket-amount1";
-  amountSpan.textContent = "0";
-  amountP.appendChild(amountSpan);
-  hiddenPriceDiv.appendChild(amountP);
-
-  // Append the entire div to the body (or any other container element)
-  document.body.appendChild(hiddenPriceDiv);
-};

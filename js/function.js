@@ -1,108 +1,78 @@
-// let ticket set count for variable
-let count = 0;
-
-function selectedEvent(elementId) {
-  document.getElementById(elementId).addEventListener("click", function () {
-    // for warning massage
-    let massagePlace = document.getElementById("warning-massage");
-    massagePlace.classList.add("hidden");
-
-    let backgroundChangeId = document.getElementById(elementId);
-    let classArray = toArray(backgroundChangeId.classList);
-
-    let matchClass = classArray.includes("bg-primary");
-    if (matchClass) {
-      console.log("double click here");
-      return changeBackgroundAndOther(backgroundChangeId);
+function discountInputField() {
+  discountField.addEventListener("keyup", function (event) {
+    let inputFieldValue = event.target.value;
+    if (inputFieldValue === "Couple 20") {
+      applyBtn.removeAttribute("disabled");
+      applyBtn.classList.remove("bg-text-secondary");
+      // button click to change grand total
+      applyBtn.addEventListener("click", function (event) {
+        setTotalWithout(20, event);
+      });
+    } else if (inputFieldValue === "NEW15") {
+      applyBtn.removeAttribute("disabled");
+      applyBtn.classList.remove("bg-text-secondary");
+      // button click to change grand total
+      applyBtn.addEventListener("click", function () {
+        setTotalWithout(15);
+      });
+    } else {
+      applyBtn.classList.add("bg-text-secondary", true);
+      applyBtn.setAttribute("disabled", true);
     }
-    // condition for 4 ticket
-    if (count >= 4) {
-      return warningMassage();
-    }
-    count++;
-    // call function for change background
-    backgroundChange(backgroundChangeId);
-    // set ticket Number function
-    setTicketNumber("ticket-number");
-
-    setSeatNamePrice(count, backgroundChangeId);
   });
 }
 
-// set ticket number for
-function setTicketNumber(elementId) {
-  document.getElementById(elementId).innerText = count;
+function setTotalWithout(discount, event) {
+  let grandTotal = document.getElementById("grand-total");
+  let totalPriceAmount = document.getElementById("total-price").innerText;
+  let priceWithDiscount = (totalPriceAmount * discount) / 100;
+  let finalPrice = totalPriceAmount - priceWithDiscount;
+  grandTotal.innerText = finalPrice;
+  applyBtn.classList.add("bg-text-secondary", true);
+  applyBtn.setAttribute("disabled", true);
+  discountField.value = "";
 }
 
-// background Change function
-function backgroundChange(backgroundChangeId) {
-  backgroundChangeId.classList.add("bg-primary", "text-white", "font-semibold");
-  backgroundChangeId.classList.remove("bg-primary-background");
-}
+document
+  .getElementById("passenger-number")
+  .addEventListener("keyup", function (event) {
+    if (
+      event.target.value.length == 11 &&
+      document.getElementById("total-price").innerText >= 550 &&
+      selectedTickets.length >= 0
+    ) {
+      console.log(selectedTickets.length);
+      nextBtn.removeAttribute("disabled");
+    } else {
+      nextBtn.setAttribute("disabled", true);
+      console.log(selectedTickets.length);
+    }
+  });
 
-// warning massage showing
-function warningMassage() {
-  let massagePlace = document.getElementById("warning-massage");
-  console.log("hello warning massage");
-  massagePlace.innerText = "You cannot buy its tickets";
-  massagePlace.classList.remove("hidden");
-}
-
-// function convert a classList to array
-function toArray(obj) {
-  var array = [];
-  // iterate backwards ensuring that length is an UInt32
-  for (var i = obj.length >>> 0; i--; ) {
-    array[i] = obj[i];
-  }
-  return array;
-}
-
-// function for -- and change background
-function changeBackgroundAndOther(elementId) {
-  removeSeatNamePrice(elementId);
-  count--;
-  elementId.classList.remove("bg-primary", "text-white", "font-semibold");
-  elementId.classList.add("bg-primary-background");
-  setTicketNumber("ticket-number");
-}
-
-// set Seat name and price per seat function
-function setSeatNamePrice(setNumber, seatName) {
-  if (count > 2) {
-    console.log(count);
-    document.getElementById("hidden-price" + count).classList.remove("hidden");
-  }
-  let seatNumber = setNumber;
-  let setName = "set-name" + seatNumber;
-  document.getElementById(setName).innerText = seatName.innerText;
-}
-
-// remove setName and price function
-function removeSeatNamePrice(elementId) {
-  let seatName = "set-name" + valueToArray(elementId);
-  document.getElementById(seatName).innerText = "Set Name";
-}
-
-// all value to array
-function valueToArray(seatName) {
-  let valueArray = [];
-  valueArray[0] = document.getElementById("set-name1").innerText;
-
-  valueArray[1] = document.getElementById("set-name2").innerText;
-
-  valueArray[2] = document.getElementById("set-name3").innerText;
-
-  valueArray[3] = document.getElementById("set-name4").innerText;
-
-  let clickedBtn = seatName.innerText;
-
-  let arrayIncludes = valueArray.includes(clickedBtn);
-
-  if (arrayIncludes) {
-    let index = valueArray.indexOf(clickedBtn);
-    return index + 1;
+function disabledRemove(button) {
+  let passengerName = document.getElementById("passenger-name");
+  let passengerEmail = document.getElementById("passenger-email");
+  if (selectedTickets.length >= 0 && !button.classList.contains("bg-primary")) {
+    passengerEmail.removeAttribute("disabled");
+    passengerName.removeAttribute("disabled");
+    passengerNumber.removeAttribute("disabled");
+    console.log(selectedTickets.length);
   } else {
-    console.log("hi this is mahdi");
+    passengerEmail.setAttribute("disabled", true);
+    passengerName.setAttribute("disabled", true);
+    passengerNumber.setAttribute("disabled", true);
+
+    passengerNumber.value = "";
+    nextBtn.setAttribute("disabled", true);
   }
 }
+
+function nextBtnEvent() {
+  document.getElementById("next-btn").addEventListener("click", function () {
+    document.getElementById("success-ticket").classList.remove("hidden");
+    document.getElementById("ticket-management").classList.add("hidden");
+    console.log(document.getElementById("ticket-management").classList);
+  });
+}
+
+nextBtnEvent();
