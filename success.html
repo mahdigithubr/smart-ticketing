@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart ticketing</title>
+    <!-- tailwind and daisy ui cnd -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google font link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- tailwind customization -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1DD100",
+              "text-primary": "#030712", // 7%
+              "text-secondary": "#03071280", // 50%
+              "text-thirdly": "#03071299", // 60%
+              "text-fourthly": "#27AE60",
+              "text-fifthly": "#030712cc",
+              "background-secondary": "#0307121a",
+              "primary-background": "#F7F8F8",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- css style  font-family -->
+    <style>
+      .raleway-font {
+        font-family: "Raleway", serif;
+      }
+      .inter-font {
+        font-family: "Inter", serif;
+      }
+    </style>
+  </head>
+  <body>
+    <section
+      class="flex justify-center h-screen items-center bg-primary-background"
+      id="success-ticket"
+    >
+      <div
+        class="max-w-[700px] max-h-[480px] px-4 py-7 lg:py-10 lg:px-20 text-center space-y-3 bg-white"
+        700px=""
+        480px=""
+      >
+        <img src="images/success.png" class="mx-auto mb-5" alt="" />
+        <h3 class="text-2xl text-text-fourthly mb-5">SUCCESS</h3>
+        <p class="text-text-primary font-semibold">
+          Thank you for Booking Our Bus Seats. <br />
+          We are working hard to find the best service and deals for you
+        </p>
+        <p class="text-bg-secondary inter-font">
+          Shortly you will find a confirmation in your email.
+        </p>
+        <button
+          class="btn px-16 rounded-full bg-[#27AE60] text-white hover:bg-[#27AE60] hover:text-white"
+        >
+          Continue
+        </button>
+      </div>
+    </section>
+  </body>
+</html>

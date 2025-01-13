@@ -38,6 +38,7 @@
               "text-secondary": "#03071280", // 50%
               "text-thirdly": "#03071299", // 60%
               "text-fourthly": "#27AE60",
+              "text-fifthly": "#030712cc",
               "background-secondary": "#0307121a",
               "primary-background": "#F7F8F8",
             },
@@ -57,37 +58,190 @@
   </head>
   <body class="raleway-font box-border">
     <!-- header section start -->
-    <header class="container mx-auto"></header>
+    <header class="container mx-auto">
+      <!-- Navbar section  -->
+      <nav class="my-4">
+        <div class="navbar bg-base-100">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              >
+                <li><a>Home</a></li>
+
+                <li><a>About</a></li>
+                <li><a>Destination</a></li>
+                <li><a>Search</a></li>
+              </ul>
+            </div>
+            <a class="btn btn-ghost text-2xl lg:text-4xl font-extrabold"
+              >P-Ticket</a
+            >
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+              <li><a>Home</a></li>
+
+              <li><a>About</a></li>
+              <li><a>Destination</a></li>
+              <li><a>Search</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <a class="btn text-primary bg-[#1DD1001a] border border-[#1DD10066]"
+              >Bus <img src="images/bus-icon.png" alt=""
+            /></a>
+          </div>
+        </div>
+      </nav>
+      <!-- Banner section  -->
+      <section class="relative">
+        <div
+          class="hero rounded-xl lg:rounded-[30px] h-[550px]"
+          style="background-image: url(images/banner.png)"
+        >
+          <div
+            class="hero-overlay bg-opacity-30 rounded-xl lg:rounded-[30px]"
+          ></div>
+          <div class="hero-content text-neutral-content text-center">
+            <div class="">
+              <h1 class="mb-5 lg:text-6xl text-3xl font-bold">
+                End-to-End Travel with <br />
+                <span class="text-primary"> P Paribahan</span>
+              </h1>
+              <p class="mb-5 text-white">
+                Yes, you can run unit tests and view the results directly within
+                the app. <br class="hidden lg:block" />
+                The integrated testing features allow for a streamlined .
+              </p>
+              <button class="btn bg-primary hover:bg-primary border-none">
+                Get Started
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- bus details  -->
+        <div class="lg:absolute mt-5 lg:mt-0 top-[500px] w-full">
+          <div
+            class="flex flex-col lg:flex-row justify-evenly lg:bg-transparent bg-white lg:space-y-0 space-y-5"
+          >
+            <div
+              class="flex px-7 justify-center py-4 bg-white rounded-[20px] border lg:border-x-0 lg:border-t-0 border-b-4 border-primary"
+            >
+              <img src="images/people.png" class="w-[60px] h-[60px]" alt="" />
+              <p class="text-thirdly flex flex-col ml-3">
+                <span class="text-black text-4xl font-semibold inter-font"
+                  >500K+</span
+                >
+                Registered users
+              </p>
+            </div>
+            <div
+              class="flex px-7 py-4 justify-center bg-white rounded-[20px] border lg:border-x-0 lg:border-t-0 border-b-4 border-primary"
+            >
+              <img
+                src="images/ticket-cupon.png"
+                class="w-[60px] h-[60px]"
+                alt=""
+              />
+              <p class="text-thirdly flex flex-col ml-3">
+                <span class="text-black text-4xl font-semibold inter-font"
+                  >1.7 lacks</span
+                >
+                Tickets sold
+              </p>
+            </div>
+            <div
+              class="flex px-7 py-4 justify-center bg-white rounded-[20px] border lg:border-x-0 lg:border-t-0 border-b-4 border-primary"
+            >
+              <img src="images/stoppage.png" class="w-[60px] h-[60px]" alt="" />
+              <p class="text-thirdly flex flex-col ml-3">
+                <span class="text-black text-4xl font-semibold inter-font"
+                  >80K+</span
+                >Rental partners
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
     <!-- header section end -->
 
     <!-- main section start -->
-    <main class="">
-      <section
-        class="flex justify-center h-screen items-center bg-primary-background hidden"
-        id="success-ticket"
-      >
+    <main class="text-center">
+      <section class="lg:mt-32 mt-28 mb-28 space-y-14 container mx-auto">
+        <h2 class="text-4xl bold">Best offers for you</h2>
         <div
-          class="max-w-[700px] max-h-[480px] px-4 py-7 lg:py-10 lg:px-20 text-center space-y-3 bg-white"
-          700px=""
-          480px=""
+          class="flex flex-col lg:space-y-0 gap-x-5 space-y-5 lg:flex-row lg:justify-evenly"
         >
-          <img src="images/success.png" class="mx-auto mb-5" alt="" />
-          <h3 class="text-2xl text-text-fourthly mb-5">SUCCESS</h3>
-          <p class="text-text-primary font-semibold">
-            Thank you for Booking Our Bus Seats. <br />
-            We are working hard to find the best service and deals for you
-          </p>
-          <p class="text-bg-secondary inter-font">
-            Shortly you will find a confirmation in your email.
-          </p>
-          <button
-            class="btn px-16 rounded-full bg-[#27AE60] text-white hover:bg-[#27AE60] hover:text-white"
+          <!-- 15% discount coupon card -->
+
+          <div
+            class="flex md:px-5 px-1 mx-auto pr-3 md:pr-10 md:w-[570px] bg-[#FFBF0F] rounded-3xl"
           >
-            Continue
-          </button>
+            <div class="md:p-7 p-2 flex flex-col items-center justify-center">
+              <h3
+                class="lg:text-4xl text-2xl text-fifthly font-black inter-font"
+              >
+                15% OFF
+              </h3>
+              <p class="inter-font font-semibold">on your next purchase</p>
+              <p class="text-text-secondary font-medium">use by January 2024</p>
+            </div>
+            <img class="h-[220px]" src="images/cupon-devider.png" alt="" />
+            <div class="flex flex-col items-center justify-center p-7">
+              <h3 class="md:text-3xl text-xl font-bold">NEW15</h3>
+              <p class="text-text-secondary">Coupon Code</p>
+            </div>
+          </div>
+          <!-- 20% discount coupon card -->
+
+          <div
+            class="flex md:px-5 px-1 mx-auto pr-3 md:pr-10 md:w-[570px] bg-[#F78C9C] rounded-3xl"
+          >
+            <div class="md:p-7 p-2 flex flex-col items-center justify-center">
+              <h3
+                class="lg:text-4xl text-2xl text-fifthly font-black inter-font"
+              >
+                20% OFF
+              </h3>
+              <p class="inter-font font-semibold">on your next purchase</p>
+              <p class="text-text-secondary font-medium">use by January 2024</p>
+            </div>
+            <img class="h-[220px]" src="images/cupon-devider.png" alt="" />
+            <div class="flex flex-col items-center justify-center p-7">
+              <h3 class="md:text-3xl text-xl font-bold">Couple 20</h3>
+              <p class="text-text-secondary">Coupon Code</p>
+            </div>
+          </div>
         </div>
+        <button
+          class="btn text-primary bg-[#1DD1001a] border border-[#1DD10066]"
+        >
+          See All Offers
+        </button>
       </section>
-      <section id="ticket-management" class="bg-primary-background">
+      <section
+        id="ticket-management"
+        class="bg-primary-background py-20 rounded-t-[60px]"
+      >
         <!-- heading description div -->
         <div class="text-center space-y-5 mx-5">
           <h2 class="text-4xl font-bold text-text-primary">P.H Paribahan</h2>
@@ -224,79 +378,81 @@
               </p>
             </div>
             <!-- main ticket number or serial -->
-            <div class="flex flex-col lg:flex-row gap-16">
+            <div class="flex flex-col md:flex-row gap-16 justify-center">
               <!-- sub main 1 -->
               <div class="flex gap-7">
                 <div class="space-y-5 cursor-pointer">
-                  <p id="first" class="px-5 py-4 rounded-lg">A</p>
-                  <p class="px-5 py-4 rounded-lg">B</p>
-                  <p class="px-5 py-4 rounded-lg">C</p>
-                  <p class="px-5 py-4 rounded-lg">D</p>
-                  <p class="px-5 py-4 rounded-lg">E</p>
-                  <p class="px-5 py-4 rounded-lg">F</p>
-                  <p class="px-5 py-4 rounded-lg">G</p>
-                  <p class="px-5 py-4 rounded-lg">H</p>
-                  <p class="px-5 py-4 rounded-lg">I</p>
-                  <p class="px-5 py-4 rounded-lg">J</p>
+                  <p id="first" class="md:px-5 md:py-4 px-2 py-2 rounded-lg">
+                    A
+                  </p>
+                  <p class="md:px-5 md:py-4 px-2 py-2 rounded-lg">B</p>
+                  <p class="md:px-5 md:py-4 px-2 py-2 rounded-lg">C</p>
+                  <p class="md:px-5 md:py-4 px-2 py-2 rounded-lg">D</p>
+                  <p class="md:px-5 md:py-4 px-2 py-2 rounded-lg">E</p>
+                  <p class="md:px-5 md:py-4 px-2 py-2 rounded-lg">F</p>
+                  <p class="md:px-5 md:py-4 px-2 py-2 rounded-lg">G</p>
+                  <p class="md:px-5 md:py-4 px-2 py-2 rounded-lg">H</p>
+                  <p class="md:px-5 md:py-4 px-2 py-2 rounded-lg">I</p>
+                  <p class="md:px-5 md:py-4 px-2 py-2 rounded-lg">J</p>
                 </div>
                 <div class="space-y-5 cursor-pointer">
                   <p
                     id="background-change1"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     A1
                   </p>
                   <p
                     id="background-change2"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     B1
                   </p>
                   <p
                     id="background-change3"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     C1
                   </p>
                   <p
                     id="background-change4"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     D1
                   </p>
                   <p
                     id="background-change5"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     E1
                   </p>
                   <p
                     id="background-change6"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     F1
                   </p>
                   <p
                     id="background-change7"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     G1
                   </p>
                   <p
                     id="background-change8"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     H1
                   </p>
                   <p
                     id="background-change9"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     I1
                   </p>
                   <p
                     id="background-change10"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     J1
                   </p>
@@ -304,126 +460,126 @@
                 <div class="space-y-5 cursor-pointer">
                   <p
                     id="background-change11"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     A2
                   </p>
                   <p
                     id="background-change12"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     B2
                   </p>
                   <p
                     id="background-change13"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     C2
                   </p>
                   <p
                     id="background-change14"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     D2
                   </p>
                   <p
                     id="background-change15"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     E2
                   </p>
                   <p
                     id="background-change16"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     F2
                   </p>
                   <p
                     id="background-change17"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     G2
                   </p>
                   <p
                     id="background-change18"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     H2
                   </p>
                   <p
                     id="background-change19"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     I2
                   </p>
                   <p
                     id="background-change20"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     J2
                   </p>
                 </div>
               </div>
               <!-- sub main 2 -->
-              <div class="flex gap-5 ml-[92px] lg:ml-0 cursor-pointer">
+              <div class="flex gap-5 lg:ml-0 cursor-pointer">
                 <div class="space-y-5">
                   <p
                     id="background-change21"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     A3
                   </p>
                   <p
                     id="background-change22"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     B3
                   </p>
                   <p
                     id="background-change23"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     C3
                   </p>
                   <p
                     id="background-change24"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     D3
                   </p>
                   <p
                     id="background-change25"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     E3
                   </p>
                   <p
                     id="background-change26"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     F3
                   </p>
                   <p
                     id="background-change27"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     G3
                   </p>
                   <p
                     id="background-change28"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     H3
                   </p>
                   <p
                     id="background-change29"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     I3
                   </p>
                   <p
                     id="background-change30"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     J3
                   </p>
@@ -431,61 +587,61 @@
                 <div class="space-y-5">
                   <p
                     id="background-change31"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     A4
                   </p>
                   <p
                     id="background-change32"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     B4
                   </p>
                   <p
                     id="background-change33"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     C4
                   </p>
                   <p
                     id="background-change34"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     D4
                   </p>
                   <p
                     id="background-change35"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     E4
                   </p>
                   <p
                     id="background-change36"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     F4
                   </p>
                   <p
                     id="background-change37"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     G4
                   </p>
                   <p
                     id="background-change38"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     H4
                   </p>
                   <p
                     id="background-change39"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     I4
                   </p>
                   <p
                     id="background-change40"
-                    class="ticket px-11 py-4 rounded-lg bg-primary-background"
+                    class="ticket md:px-11 px-6 md:py-4 py-2 md:rounded-lg rounded-sm bg-primary-background"
                   >
                     J4
                   </p>
@@ -584,13 +740,15 @@
                   type="text"
                   id="passenger-email"
                 />
-                <button
+
+                <a
                   disabled
                   id="next-btn"
                   class="btn bg-primary my-3 text-white hover:bg-primary hover:text-white"
+                  href="success.html"
+                  >Next</a
                 >
-                  Next
-                </button>
+
                 <p class="underline flex justify-evenly">
                   <a href="#">Terms and Conditions</a>
                   <a href="#">Cancellation Policy</a>
@@ -604,7 +762,46 @@
     <!-- main section end -->
 
     <!-- footer section start -->
-    <footer></footer>
+    <footer class="bg-[#030712]">
+      <div class="container mx-auto">
+        <div class="footer text-neutral-content p-10 justify-between">
+          <aside>
+            <h3 class="text-4xl font-bold text-white">P-Ticket</h3>
+            <p>
+              P-Ticket is a digital platform to make your
+              <br />
+              daily commuting better.
+            </p>
+          </aside>
+
+          <nav>
+            <h6 class="text-white font-semibold text-xl">Download our app</h6>
+            <div class="flex justify-center items-center">
+              <img class="inline" src="images/playstore.png" alt="" />
+              <p class="text-xl font-semibold text-white">
+                <span class="text-xs font-normal">GET IN ONE</span><br />
+                Google Ply
+              </p>
+            </div>
+          </nav>
+        </div>
+        <div
+          class="footer text-neutral-content border-base-300 border-t px-10 py-4"
+        >
+          <aside class="grid-flow-col items-center">
+            <p>@all rights reserved, P-Ticket services limited.2024</p>
+          </aside>
+          <nav
+            class="md:place-self-center flex gap-3 md:justify-self-end text-white font-semibold"
+          >
+            <a href="">Terms & condition</a>
+            <a href="">Return & refund policy</a>
+            <a href="">Privacy policy</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
     <!-- footer section end -->
     <script src="js/function.js"></script>
     <script src="js/script.js"></script>
